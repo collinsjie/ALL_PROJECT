@@ -473,15 +473,11 @@
 #     return nums[(len_nums//2)]
 # print(median('a','b','c','t','d'))
 
-
-        
-    
-
-
-
-
-
-
+# def fav(**kwargs):
+#     for value in kwargs.values():
+#         print(value)
+# fav(victor=1, dan=2,bosun=17)
+import urllib.request, urllib.parse, urllib.error
 
 
 
