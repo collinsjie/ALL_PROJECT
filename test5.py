@@ -477,9 +477,119 @@
 #     for value in kwargs.values():
 #         print(value)
 # fav(victor=1, dan=2,bosun=17)
-import urllib.request, urllib.parse, urllib.error
+
+# lst=[1,2,'A','b','c']
+# a, b, *c= lst
+# print(a)
+# print(b)
+# print(*c)
+# nlist=[1,2,3]
+# newlist= list(map(lambda i:i*2,nlist))
+# print(newlist)
+
+# mylist=[1.0,2.3,4.4]
+# newlist2=list(map(lambda i:int(i), mylist))
+# print(newlist2)
+# lst=[1.0, 2.2,3.3]
+# def double(items):
+#     return items*2
+# A=list(map(double, lst))
+# print(A)
+# dict={'a':100, 'b':200,'c':300}
+
+dict1= {'victor': 20, 'fank': 30, 'uche':35}
+# def intro(items):
+#         return f'{items[0]} is {items[1]}'
+# intro_list=list(map(intro,dict1.items()))
+# print(intro_list)
+
+# intro =list(filter(lambda i: i[1]>=30, dict1.items()))
+#print(intro)
+# import math
+# mylist=[1,2,3,4,5]
+# len_total=0
+# for i in mylist:
+#     len_total +=1
+# sum=0
+# for num in  mylist:
+#     sum +=num
+# average= math.ceil(sum/len_total)
+# print(average)
 
 
+# import urllib.request
+# from bs4 import BeautifulSoup
 
+# # URL of the data file
+# url = "https://py4e-data.dr-chuck.net/comments_1786011.html"
+
+# # Open the URL and read the HTML contents
+# html = urllib.request.urlopen(url).read()
+
+# # Create a BeautifulSoup object to parse the HTML
+# soup = BeautifulSoup(html, 'html.parser')
+
+# # Find all the <span> tags in the HTML
+# span_tags = soup.find_all('span', class_='comments')
+
+# # Initialize a variable to store the sum of numbers
+# total_sum = 0
+
+# # Loop through each <span> tag, extract the number, and add it to the sum
+# for span in span_tags:
+#     number = int(span.contents[0])
+#     total_sum += number
+
+# # Print the total sum
+# print("Sum:", total_sum)
+
+# import urllib.request, urllib.parse, urllib.error
+# from bs4 import BeautifulSoup
+
+# url = input('Enter URL: ')
+# count = int(input('Enter count: '))
+# position = int(input('Enter position: '))
+
+# for i in range(count):
+#     html = urllib.request.urlopen(url).read()
+#     soup = BeautifulSoup(html, 'html.parser')
     
+#     # Retrieve all anchor tags
+#     tags = soup('a')
     
+#     # Find the link at the specified position
+#     link = tags[position - 1].get('href', None)
+    
+#     print('Retrieving:', link)
+    
+#     # Update the URL for the next iteration
+#     url = link
+
+# # Extract the last name from the URL
+# last_name = url.split('_')[-1].split('.')[0]
+# print('The answer to the assignment is:', last_name)
+
+
+import urllib.request
+import xml.etree.ElementTree as ET
+
+# Prompt for the URL
+url = input("Enter location: ")
+
+# Retrieve the XML data from the URL
+print("Retrieving", url)
+xml_data = urllib.request.urlopen(url).read()
+print("Retrieved", len(xml_data), "characters")
+
+# Parse the XML data
+tree = ET.fromstring(xml_data)
+
+# Find all the 'count' elements using XPath
+counts = tree.findall('.//count')
+
+# Compute the sum of the numbers
+total = sum(int(count.text) for count in counts)
+
+# Print the result
+print("Count:", len(counts))
+print("Sum:", total)

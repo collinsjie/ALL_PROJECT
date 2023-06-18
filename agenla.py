@@ -69,13 +69,69 @@
 # print('the highest is:', highest_score)
 
 
-for number in range(1, 101):
-    if number %3==0 and number %5==0:
-        print('fizzbuzz')
-    elif number %3==0:
-        print('fizz')
-    elif number %5==0:
-        print('buzz')
+# for number in range(1, 101):
+#     if number %3==0 and number %5==0:
+#         print('fizzbuzz')
+#     elif number %3==0:
+#         print('fizz')
+#     elif number %5==0:
+#         print('buzz')
+#     else:
+#         print(number)
+    
+import random
+# word_list=['lagos', 'abuja', 'benin']
+# chosen_letter=random.choice(word_list)
+# user_guess_letter=input('enter a letter:').lower
+# for letter in word_list:
+#     if letter ==user_guess_letter:
+#         print('right')
+#     else:
+#         print('wrong')
+
+# random_select = int(input('enter any number to match computer selection: '))
+# random_int = random.randint(1, 10)
+# if random_select == random_int:
+#     print('match')
+# else:
+#     print('unmatch')
+# import math
+# def wall_paint_calc(height,width, coverage):
+#     area=height*width
+#     num_of_can=math.ceil(area/coverage)
+#     print(f'you need {num_of_can} to paint the wall')
+# wall_paint_calc(height=3, width=9,coverage=5)
+
+    
+# def prime_number_checker(number):
+#     is_prime=True
+#     for i in range(2,number):
+#         if number % i==0:
+#             is_prime=False
+#     if is_prime:
+#         print('is prime number')
+#     else:
+#         print('Not a prime number')
+# n=int(input('Check this number:\n'))
+# prime_number_checker(number=n)
+
+student_scores= {
+    'Harry':81, 
+    'Ron':78, 
+    'Hermione':99, 
+    'Draco':74, 
+    'Neville':62,
+}
+student_grades={}
+for student in student_scores:
+    score=student_scores[student]
+    if score>90:
+        student_grades[student] ='Outstanding'
+    elif score>80:
+        student_grades[student] = 'Exceeded Expections'
+    elif score>70:
+        student_grades[student] = 'Acceptable'
     else:
-        print(number)
-        
+        student_grades[student] = 'Fail'
+    
+print(student_grades)
